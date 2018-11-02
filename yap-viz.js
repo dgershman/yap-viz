@@ -18,7 +18,7 @@ $(function() {
         setMapInfo({
             "lat": data["latitude"],
             "lng": data["longitude"]
-        });
+        }, JSON.stringify(data));
     });
 });
 
@@ -37,11 +37,12 @@ function initMap() {
     getcoder = new google.maps.Geocoder;
 }
 
-function setMapInfo(pos) {
+function setMapInfo(pos, location) {
     infoWindow.setPosition(pos);
     getServiceBodyForCoordinates(pos.lat, pos.lng, function(data) {
         var serviceBodyDetails = getServiceBodyById(data[0]["service_body_bigint"]);
         var content = "<b>" + serviceBodyDetails["name"] + "</b>";
+        content += "<br>Caller Location Request: " + location;
         content += "<br>Helpline: <a href='tel:" + serviceBodyDetails["helpline"].split("|")[0] + "' target='_blank'>" + serviceBodyDetails["helpline"].split("|")[0] + "</a>";
         infoWindow.setContent(content);
         infoWindow.open(map);
