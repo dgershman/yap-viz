@@ -42,7 +42,7 @@ function setMapInfo(pos) {
     getServiceBodyForCoordinates(pos.lat, pos.lng, function(data) {
         var serviceBodyDetails = getServiceBodyById(data[0]["service_body_bigint"]);
         var content = "<h3><b>" + serviceBodyDetails["name"] + "</b></h3>";
-        content += "<br>Helpline: <a href=tel:'" + serviceBodyDetails["helpline"].split("|")[0] + "' target='_blank'>" + serviceBodyDetails["helpline"].split("|")[0] + "</a>";
+        content += "<br>Helpline: <a href='tel:" + serviceBodyDetails["helpline"].split("|")[0] + "' target='_blank'>" + serviceBodyDetails["helpline"].split("|")[0] + "</a>";
         infoWindow.setContent(content);
         infoWindow.open(map);
         map.setCenter(pos);
