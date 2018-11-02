@@ -30,7 +30,7 @@
             setMapInfo({
                 "lat": data["latitude"],
                 "lng": data["longitude"]
-            }, JSON.stringify(data));
+            }, data["location"]);
         });
     });
 
