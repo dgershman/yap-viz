@@ -23,7 +23,7 @@ $(function() {
 });
 
 function getServiceBodyForCoordinates(latitude, longitude, callback) {
-    $.getJSON(root + "/client_interface/jsonp/?switcher=GetSearchResults&geo_width=-10&long_val=" + longitude + "&lat_val=" + latitude + "&callback=?", function (data) {
+    $.getJSON(root + "/client_interface/jsonp/?switcher=GetSearchResults&sort_results_by_distance=1&geo_width=-10&long_val=" + longitude + "&lat_val=" + latitude + "&callback=?", function (data) {
         callback(data);
     });
 }
