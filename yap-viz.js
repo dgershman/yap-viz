@@ -30,8 +30,8 @@ function getServiceBodyForCoordinates(latitude, longitude, callback) {
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
+        center: {lat: 41.2919667, lng: -96.151288},
+        zoom: 8,
     });
     infoWindow = new google.maps.InfoWindow;
     getcoder = new google.maps.Geocoder;
