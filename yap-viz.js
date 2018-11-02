@@ -41,10 +41,8 @@ function setMapInfo(pos) {
     infoWindow.setPosition(pos);
     getServiceBodyForCoordinates(pos.lat, pos.lng, function(data) {
         var serviceBodyDetails = getServiceBodyById(data[0]["service_body_bigint"]);
-        var content = "<b>" + serviceBodyDetails["name"] + "</b>";
-        content += "<br>Website: <a href='" + serviceBodyDetails["url"] + "' target='_blank'>" + serviceBodyDetails["url"] + "</a>";
+        var content = "<h3><b>" + serviceBodyDetails["name"] + "</b></h3>";
         content += "<br>Helpline: <a href=tel:'" + serviceBodyDetails["helpline"].split("|")[0] + "' target='_blank'>" + serviceBodyDetails["helpline"].split("|")[0] + "</a>";
-        content += "<br>Root Server: <a href='" + data[0]["root_server_uri"] + "' target='_blank'>" + data[0]["root_server_uri"] + "</a>";
         infoWindow.setContent(content);
         infoWindow.open(map);
         map.setCenter(pos);
