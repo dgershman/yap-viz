@@ -41,14 +41,14 @@
     }
 
     function initMap() {
-        startingPos = { lat: 41.1486361, lng: -95.9716504 };
+        startingPos = { lat: 27.9801904, lng: -82.3331188 };
         map = new google.maps.Map(document.getElementById('map'), {
             center: startingPos,
             zoom: 7,
         });
         infoWindow = new google.maps.InfoWindow;
         infoWindow.setPosition(startingPos);
-        infoWindow.setContent("<b>MZSS3</b>");
+        infoWindow.setContent("<b>FSS8</b>");
         infoWindow.open(map);
         getcoder = new google.maps.Geocoder;
     }
